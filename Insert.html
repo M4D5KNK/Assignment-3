@@ -10,21 +10,21 @@
     <div class="container">
         <div class="heron-container">
             <h1>Heron's Formula</h1>
-            <form action="">
+            <form id="heron-form">
                 <label for="a-side">Side a:</label>
-                <input type="number"  id="a-side" placeholder="Please enter your A value">
+                <input type="number" id="a-side" placeholder="Please enter your A value">
                 <label for="b-side">Side b:</label>
                 <input type="number" id="b-side" placeholder="Please enter your B value">
                 <label for="c-side">Side b:</label>
                 <input type="number" id="c-side" placeholder="Please enter your C value">
                 <label for="heron's-result">Area (Result)</label>
-                <input type="text" id="heron's-result" readonly>
+                <input type="text" id="heron-result" readonly>
                 <input type="submit" value="Calculate">
             </form>
         </div>
         <div class="ambiguous-container">
             <h1>Ambiguous Case</h1>
-            <form action="">
+            <form id="ambiguous-form">
                 <label for="a-angle">Angle A</label>
                 <input type="number" id="a-angle" placeholder="Please enter your A value">
                 <label for="a-side-2">Side a:</label>
@@ -38,25 +38,22 @@
         </div>
         <div class="newton-container">
             <h1>Newton's Method</h1>
-            <form action="">
-                <label for="a-side">A-Side</label>
-                <input type="number" placeholder="Please enter your A value">
-                <label for="b-side">B-Side</label>
-                <input type="number" placeholder="Please enter your B value">
-                <label for="c-side">C-Side</label>
-                <input type="number" placeholder="Please enter your C value">
+            <form id="newton-form">
+                <label for="root">Root Guess</label>
+                <input type="number" id="root" placeholder="Please enter your A value">
                 <label for="newton-result">Root Approximation (Result)</label>
                 <input type="text" id="newton-result" readonly>
                 <input type="submit" value="Calculate">
             </form>
         </div>
+        <!-- SEE IF YOU CAN CHANGE IT SO THAT IT CAN HAVE DUAL TUPES OF TEXT -->
         <div class="polynomial-container">
             <h1>Polynomial Function</h1>
-            <form action="">
+            <form id="polynomial-form">
                 <label for="coefficient">Coefficitents</label>
-                <input type="number" id="coefficient" placeholder="Please enter your coefficient value">
+                <input type="text" id="coefficient" placeholder="Please enter your coefficient value">
                 <label for="exponent">Exponents</label>
-                <input type="number" id="exponent" placeholder="Please enter your Exponents">
+                <input type="text" id="exponent" placeholder="Please enter your Exponents">
                 <label for="x-value">x Value</label>
                 <input type="number" id="x-value" placeholder="Please enter your x value">
                 <label for="polynomial-result">Polynomial Function (Result):</label>
@@ -67,5 +64,6 @@
             </form>
         </div>
     </div>
+    <script src="calculations.js"></script>
 </body>
 </html>
