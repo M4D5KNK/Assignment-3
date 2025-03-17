@@ -19,7 +19,7 @@ document.getElementById('ambiguous-form').addEventListener('submit', (event)=>{
     const aAngle = parseFloat(document.getElementById('a-angle').value);
     const aSide = parseFloat(document.getElementById('a-side-2').value);
     const bSide = parseFloat(document.getElementById('b-side-2').value);
-    const hSide = bSide*(Math.sin(bSide)*(Math.PI/100));
+    const hSide = bSide*(Math.sin(bSide)*(180/Math.PI));
 
     if(aAngle <= 90){
         if(aSide < hSide){
@@ -48,6 +48,7 @@ document.getElementById('ambiguous-form').addEventListener('submit', (event)=>{
     }
 })
 
+// -------------------------------------------------------------------------
 document.getElementById('newton-form').addEventListener('submit', (event) =>{
     event.preventDefault();
     let x1 = parseFloat(document.getElementById('root').value);
