@@ -7,9 +7,10 @@ document.getElementById('heron-form').addEventListener('submit', (event) =>{
     const a = parseFloat(document.getElementById('a-side').value);
     const b = parseFloat(document.getElementById('b-side').value);
     const c = parseFloat(document.getElementById('c-side').value);
-    const area = 0.25*(Math.sqrt((4*a**2*b**2)-(a**2+b**2+c**2)**2))
+    const area = 0.25* (Math.sqrt(4*(a**2)*(b**2) - (((a**2)+(b**2)-(c**2))**2)))
     //toFixed returns a string representing a number in a fixed point notation the (#) is choosing how many decimal points
     document.getElementById('heron-result').value = area.toFixed(2)
+    console.log(area)
 })
 
 //Ambiguous Case Calculation
@@ -19,7 +20,7 @@ document.getElementById('ambiguous-form').addEventListener('submit', (event)=>{
     const aAngle = parseFloat(document.getElementById('a-angle').value);
     const aSide = parseFloat(document.getElementById('a-side-2').value);
     const bSide = parseFloat(document.getElementById('b-side-2').value);
-    const hSide = bSide*(Math.sin(bSide)*(180/Math.PI));
+    const hSide = Math.round((bSide*(Math.sin((aAngle)*(Math.PI/180))))*100)/100;
 
     if(aAngle <= 90){
         if(aSide < hSide){
