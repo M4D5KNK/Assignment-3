@@ -60,7 +60,7 @@ document.getElementById('newton-form').addEventListener('submit', (event) => {
         x1 = x2;
         x2 = x1 - ((6 * x1 ** 4 - 13 * x1 ** 3 - 18 * x1 ** 2 + 7 * x1 + 6) / (24 * x1 ** 3 - 39 * x1 ** 2 - 36 * x1 + 7));
     } while (Math.abs(x1 - x2) > 0.001);
-    document.getElementById('newton-result').value = x2.toFixed();
+    document.getElementById('newton-result').value = x2.toFixed(2);
 })
 
 document.getElementById('polynomial-form').addEventListener('submit', (event) => {
