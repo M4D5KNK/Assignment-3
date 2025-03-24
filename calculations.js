@@ -85,19 +85,23 @@ document.getElementById('polynomial-form').addEventListener('submit', (event) =>
             const exp = exps[i];
 
             // Checking if the exponent is positive or negative
-            if (i > 0 && coeff >= 0) {
-                polynomialEq += ' + ';
-            } else if (i > 0 && coeff < 0) {
-                polynomialEq += ' - ';
+            if (coeffs[i - 1] != 0) {
+                if (i > 0 && coeff >= 0) {
+                    polynomialEq += ' + ';
+                } else if (i > 0 && coeff < 0) {
+                    polynomialEq += ' - ';
+                }
             }
 
             //Adding the correct symbol after the coefficient
-            if (exp == 0) {
-                polynomialEq += Math.abs(coeff);
-            } else if (exp == 1) {
-                polynomialEq += (Math.abs(coeff)) + 'x';
-            } else {
-                polynomialEq += Math.abs(coeff) + 'x^' + exp;
+            if (coeff != 0) {
+                if (exp == 0) {
+                    polynomialEq += Math.abs(coeff);
+                } else if (exp == 1) {
+                    polynomialEq += (Math.abs(coeff)) + 'x';
+                } else {
+                    polynomialEq += Math.abs(coeff) + 'x^' + exp;
+                }
             }
             // Calculating the polynomial value
             polynomialEv += coeff * (xValue ** exp);
