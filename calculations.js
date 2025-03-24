@@ -85,6 +85,7 @@ document.getElementById('polynomial-form').addEventListener('submit', (event) =>
             const exp = exps[i];
 
             // Checking if the exponent is positive or negative
+            //Checks if the previous one was 0 so that it does not need to add a sign
             if (coeffs[i - 1] != 0) {
                 if (i > 0 && coeff >= 0) {
                     polynomialEq += ' + ';
@@ -94,6 +95,7 @@ document.getElementById('polynomial-form').addEventListener('submit', (event) =>
             }
 
             //Adding the correct symbol after the coefficient
+            //Checks if the number is 0 so if it is then it does not add it
             if (coeff != 0) {
                 if (exp == 0) {
                     polynomialEq += Math.abs(coeff);
