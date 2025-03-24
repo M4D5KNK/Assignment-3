@@ -101,8 +101,6 @@ document.getElementById('polynomial-form').addEventListener('submit', (event) =>
             }
             // Calculating the polynomial value
             polynomialEv += coeff * (xValue ** exp);
-            console.log(coeff);
-            console.log(exp);
         }
         document.getElementById('polynomial-result').value = polynomialEq;
         document.getElementById('polynomial-result-2').value = polynomialEv.toFixed(2);
