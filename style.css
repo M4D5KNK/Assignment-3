@@ -9,7 +9,7 @@ body {
     height: 100vh;
 }
 
-.container{
+.container {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-row: auto auto;
@@ -18,7 +18,10 @@ body {
     align-items: center;
 }
 
-.heron-container, .ambiguous-container, .newton-container, .polynomial-container {
+.heron-container,
+.ambiguous-container,
+.newton-container,
+.polynomial-container {
     background-color: rgb(211, 210, 210);
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -29,7 +32,7 @@ body {
     box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.1);
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
 }
@@ -40,7 +43,8 @@ label {
     color: #555;
 }
 
-input[type="number"], input[type="text"] {
+input[type="number"],
+input[type="text"] {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -48,7 +52,7 @@ input[type="number"], input[type="text"] {
     font-size: 16px;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     margin-top: 10px;
     border: 1px solid black;
     border-radius: 4px;

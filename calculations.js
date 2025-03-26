@@ -26,26 +26,20 @@ document.getElementById('ambiguous-form').addEventListener('submit', (event) => 
     if (aAngle <= 90) {
         if (aSide < hSide) {
             document.getElementById('ambiguous-result').value = "No triangle"
-        }
-        else if (aSide == hSide) {
+        } else if (aSide == hSide) {
             document.getElementById('ambiguous-result').value = "Right triangle"
-        }
-        else if (aSide > bSide) {
+        } else if (aSide > bSide) {
             document.getElementById('ambiguous-result').value = "One triangle"
-        }
-        else if (hSide < aSide && aSide < bSide) {
+        } else if (hSide < aSide && aSide < bSide) {
             document.getElementById('ambiguous-result').value = "Two triangles (ambiguous case)"
         }
-    }
-    else if (aAngle < 180) {
+    } else if (aAngle < 180) {
         if (aSide < bSide || aSide == bSide) {
             document.getElementById('ambiguous-result').value = "No triangle"
-        }
-        else {
+        } else {
             document.getElementById('ambiguous-result').value = "One triangle"
         }
-    }
-    else {
+    } else {
         document.getElementById('ambiguous-result').value = "Please enter an angle between 0-180"
     }
 })
@@ -60,6 +54,7 @@ document.getElementById('newton-form').addEventListener('submit', (event) => {
         x1 = x2;
         x2 = x1 - ((6 * x1 ** 4 - 13 * x1 ** 3 - 18 * x1 ** 2 + 7 * x1 + 6) / (24 * x1 ** 3 - 39 * x1 ** 2 - 36 * x1 + 7));
     } while (Math.abs(x1 - x2) > 0.001);
+
     document.getElementById('newton-result').value = x2.toFixed(2);
 })
 
@@ -87,23 +82,21 @@ document.getElementById('polynomial-form').addEventListener('submit', (event) =>
             // Checking if the exponent is positive or negative
             //Checks if the previous one was 0 so that it does not need to add a sign
 
-                if (i > 0 && coeff >= 0) {
-                    polynomialEq += ' + ';
-                } else if (i > 0 && coeff < 0) {
-                    polynomialEq += ' - ';
-                }
-            
-
+            if (i > 0 && coeff >= 0) {
+                polynomialEq += ' + ';
+            } else if (i > 0 && coeff < 0) {
+                polynomialEq += ' - ';
+            }
 
             //Adding the correct symbol after the coefficient
             //Checks if the number is 0 so if it is then it does not add it
-                if (exp == 0) {
-                    polynomialEq += Math.abs(coeff);
-                } else if (exp == 1) {
-                    polynomialEq += (Math.abs(coeff)) + 'x';
-                } else {
-                    polynomialEq += Math.abs(coeff) + 'x^' + exp;
-                }
+            if (exp == 0) {
+                polynomialEq += Math.abs(coeff);
+            } else if (exp == 1) {
+                polynomialEq += (Math.abs(coeff)) + 'x';
+            } else {
+                polynomialEq += Math.abs(coeff) + 'x^' + exp;
+            }
             // Calculating the polynomial value
             polynomialEv += coeff * (xValue ** exp);
         }
